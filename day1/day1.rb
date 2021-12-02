@@ -1,15 +1,15 @@
 class Submarine
-  attr_accessor :blocks
+  attr_accessor :windows
 
-  def windows
-    blocks.map{|window| window.reduce(:+)}
+  def reduced_windows
+    windows.map{|window| window.reduce(:+) }
   end
 
   def result
-    windows.each_cons(2).select{|last, curr| curr>last}.count
+    reduced_windows.each_cons(2).select{|last, curr| curr > last }.count
   end
 end
 
 submarine = Submarine.new
-submarine.blocks = File.open('input.txt').map { |line| line.to_i }.each_cons(3)
+submarine.windows = File.open('input.txt').map { |line| line.to_i }.each_cons(3)
 puts submarine.result
