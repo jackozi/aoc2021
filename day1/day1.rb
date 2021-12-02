@@ -6,7 +6,7 @@ class Submarine
   end
 
   def result
-    blocks.map{|window| window.reduce(:+)}.each_cons(2).select{|last, curr| curr>last}.count
+    windows.each_cons(2).select{|last, curr| curr>last}.count
   end
 end
 
