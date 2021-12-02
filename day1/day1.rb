@@ -11,5 +11,5 @@ class Submarine
 end
 
 submarine = Submarine.new
-submarine.windows = File.open('input.txt').map { |line| line.to_i }.each_cons(3)
+submarine.windows = File.open('input.txt').map(&:to_i).each_cons(3)
 puts submarine.result
