@@ -17,4 +17,4 @@ end
   fish['6'] = temp_fish
 end
 
-puts fish.except('9').values.reduce(&:+)
+puts fish.values.reduce(&:+)
